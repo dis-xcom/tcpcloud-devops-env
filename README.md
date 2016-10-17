@@ -1,5 +1,7 @@
 # tcpcloud-devops-env
 
+This template requires 20 vCPU and 52Gb host RAM.
+
 Clone the repo
 --------------
 
@@ -11,6 +13,8 @@ Install requirements
 --------------------
 
 pip install -r ./requirements.txt
+
+dos-manage.py migrate
 
 Get cloudinit image
 -------------------

@@ -25,6 +25,9 @@
    - sudo echo "nameserver {gateway}" >> /etc/resolvconf/resolv.conf.d/base
    - sudo resolvconf -u
 
+   # Change owner for .ssh/
+   - chown -R vagrant:vagrant /home/vagrant/.ssh
+
    # Prepare network connection
    - sudo ifup {interface_name}
    - sudo route add default gw {gateway} {interface_name}
@@ -155,3 +158,13 @@
          nB22ReMSHq2cOrs6VTTgfhxefBwzdDFbfKMf6ZU82jCNlpetAZOrhdMHUvcsjSQk
          XKI6Ldfq6TU3xKujRHfGP+oQ6GLwVCL/kjGxOuSRLFGfRiiqYI3nww==
          -----END RSA PRIVATE KEY-----
+
+   - path: /home/vagrant/.ssh/config
+     owner: vagrant:vagrant
+     permissions: '0600'
+     content: |
+       Host *
+           ServerAliveInterval 300
+           ServerAliveCountMax 10
+           StrictHostKeyChecking no
+           UserKnownHostsFile /dev/null

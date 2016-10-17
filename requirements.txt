@@ -1,0 +1,1 @@
+git+git://github.com/openstack/fuel-devops.git@3.0.3

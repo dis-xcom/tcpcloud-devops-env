@@ -163,8 +163,8 @@
      owner: vagrant:vagrant
      permissions: '0600'
      content: |
-       Host *
-           ServerAliveInterval 300
-           ServerAliveCountMax 10
-           StrictHostKeyChecking no
-           UserKnownHostsFile /dev/null
+          Host *
+            ServerAliveInterval 300
+            ServerAliveCountMax 10
+            StrictHostKeyChecking no
+            UserKnownHostsFile /dev/null

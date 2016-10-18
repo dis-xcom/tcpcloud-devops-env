@@ -60,7 +60,7 @@ template:
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -76,29 +76,29 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data-master-node.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private
 
           - name: ctl01.mk20-lab-advanced.local
-            role: salt-slave
+            role: salt-minion
             params:
               vcpu: !os_env SLAVE_NODE_CPU, 4
               memory: !os_env SLAVE_NODE_MEMORY, 12400
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -114,29 +114,29 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private
 
           - name: ctl02.mk20-lab-advanced.local
-            role: salt-slave
+            role: salt-minion
             params:
               vcpu: !os_env SLAVE_NODE_CPU, 4
               memory: !os_env SLAVE_NODE_MEMORY, 12400
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -152,29 +152,29 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private
 
           - name: ctl03.mk20-lab-advanced.local
-            role: salt-slave
+            role: salt-minion
             params:
               vcpu: !os_env SLAVE_NODE_CPU, 4
               memory: !os_env SLAVE_NODE_MEMORY, 12400
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -190,29 +190,29 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private
 
           - name: cmp01.mk20-lab-advanced.local
-            role: salt-slave
+            role: salt-minion
             params:
               vcpu: !os_env SLAVE_NODE_CPU, 4
               memory: !os_env SLAVE_NODE_MEMORY, 8192
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -228,29 +228,29 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private
 
           - name: web01.mk20-lab-advanced.local
-            role: salt-slave
+            role: salt-minion
             params:
               vcpu: !os_env SLAVE_NODE_CPU, 1
               memory: !os_env SLAVE_NODE_MEMORY, 2048
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -266,29 +266,29 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private
 
           - name: mtr01.mk20-lab-advanced.local
-            role: salt-slave
+            role: salt-minion
             params:
               vcpu: !os_env SLAVE_NODE_CPU, 1
               memory: !os_env SLAVE_NODE_MEMORY, 2048
               boot:
                 - hd
               cloud_init_volume_name: iso
-              cloud_init_iface_up: ens3
+              cloud_init_iface_up: eth0
               volumes:
                 - name: system
                   capacity: !os_env NODE_VOLUME_SIZE, 150
@@ -304,16 +304,16 @@ template:
                   cloudinit_user_data: !include tcpcloud--user-data.yaml
 
               interfaces:
-                - label: ens3
+                - label: eth0
                   l2_network_device: public
                   interface_model: *interface_model
-                - label: ens4
+                - label: eth1
                   l2_network_device: private
                   interface_model: *interface_model
               network_config:
-                ens3:    # Will get an IP from DHCP public-pool01
+                eth0:    # Will get an IP from DHCP public-pool01
                   networks:
                     - public
-                ens4:
+                eth1:
                   networks:
                     - private

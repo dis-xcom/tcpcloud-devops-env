@@ -28,7 +28,7 @@
    # Prepare network connection
    - sudo ifup {interface_name}
    - sudo route add default gw {gateway} {interface_name}
-   - sudo ifup ens4
+   - sudo ifup eth1
 
    ############## TCP Cloud cfg01 node ##################
    #- sleep 120
@@ -68,13 +68,13 @@
    ########################################################
 
   write_files:
-   - path: /etc/network/interfaces.d/99-fuel-ccp-tests.cfg
+   - path: /etc/network/interfaces.d/99-tcp-tests.cfg
      content: |
-          auto ens3
-          iface ens3 inet dhcp
+          auto eth0
+          iface eth0 inet dhcp
 
           # 2nd interface should be UP without IP address
-          auto ens4
-          iface ens4 inet manual
+          auto eth1
+          iface eth1 inet manual
               pre-up ifconfig $IFACE up
               post-down ifconfig $IFACE down
